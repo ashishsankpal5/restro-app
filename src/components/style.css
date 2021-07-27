@@ -1,0 +1,7 @@
+.lis {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.l-ii {
+  color: red;
+}

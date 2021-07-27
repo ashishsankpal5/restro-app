@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { Box } from '@chakra-ui/react';
+import Food from './components/Food';
+import ProductInfo from './components/ProductInfo';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <Box bgColor="#F5F5F5">
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Food} />
+            <Route exact path="/info" component={ProductInfo} />
 
+            <Redirect to="/" />
+          </Switch>
+        </Router>
+      </Box>
+    </>
+  );
+};
 export default App;
